@@ -1,9 +1,14 @@
 const mongoose = require("mongoose");
 const cityClick = new mongoose.Schema(
   {
-    click: {
+    cityName: {
+      type: String,
+      required: true,
+    },
+    cityClicks: {
       type: Number,
       required: true,
+      default: 0,
     },
   },
   { timestamps: true }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/__head.ejs') %>
+    <title>City Click | Home</title>
+    <script>
+        let userCity = localStorage.getItem('userCity');
+        if (!userCity) {
+            document.location.href = '/'
+        }
+    </script>
+</head>
+
+<body>
+    <style>
+        body {
+            user-select: none;
+        }
+    </style>
+    <h1>This is a play room, your city is <span style="color: rgb(125, 90, 96);" id="city"></span>
+        and you clicks is <span id="userClicks">0</span></h1>
+
+
+
+    <script>
+        let data = JSON.parse(userCity)
+        let city = document.querySelector('#city');
+        let userClicks = document.querySelector('#userClicks');
+        let countClicks = parseInt(data.userClicks)
+        city.innerText = data.userCity;
+        userClicks.innerText = countClicks;
+
+        document.addEventListener('click', () => {
+            let userDetails = {
+                userCity: data.userCity,
+                userClicks: countClicks,
+            }
+            countClicks++
+            localStorage.setItem('userCity', JSON.stringify(userDetails))
+            userClicks.innerText = countClicks - 1;
+        })
+    </script>
+</body>
+
+</html>
