@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap");
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+*::-webkit-scrollbar {
+  width: 13px;
+  background: #e8ecf0;
+}
+
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(219, 115, 115, 0.3);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #222f45;
+}
+
+body {
+  font-family: "Merienda", sans-serif;
+  background: #f4f4f4;
+}
+
+main {
+  min-height: 100vh;
+}
+main .container {
+  background: #e8ecf0;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid #1277e6;
+}
+main .container h1 {
+  padding: 1rem 0;
+}
+main .container select {
+  max-height: 500px;
+  padding: 10px 20px;
+  outline: none;
+  border: 0;
+}
+main .container .submit-btn {
+  background-color: #1277e6;
+  color: #e8ecf0;
+  border-radius: 3px;
+  width: 120px;
+  text-align: center;
+  padding: 8px 15px;
+  margin-top: 1rem;
+  transition: 250ms;
+  cursor: pointer;
+  user-select: none;
+}
+main .container .submit-btn:hover {
+  background-color: #0b4687;
+}
+
+/*# sourceMappingURL=style.css.map */

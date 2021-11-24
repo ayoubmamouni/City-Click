@@ -7,6 +7,8 @@ if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
 
+// require("./db/connect");
+
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

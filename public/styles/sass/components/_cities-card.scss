@@ -1,0 +1,34 @@
+main {
+  @extend %flexbox;
+  min-height: 100vh;
+  .container {
+    background: $greyColor;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid $citiesCardBorder;
+    h1 {
+      padding: 1rem 0;
+    }
+    select {
+      max-height: 500px;
+      padding: 10px 20px;
+      outline: none;
+      border: 0;
+    }
+    .submit-btn {
+      background-color: $citiesCardBorder;
+      color: $greyColor;
+      border-radius: 3px;
+      width: 120px;
+      text-align: center;
+      padding: 8px 15px;
+      margin-top: 1rem;
+      transition: 250ms;
+      cursor: pointer;
+      user-select: none;
+      &:hover {
+        background-color: darken($citiesCardBorder, 20%);
+      }
+    }
+  }
+}
