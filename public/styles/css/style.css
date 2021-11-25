@@ -81,10 +81,10 @@ body {
 .clicks-couner-card {
   width: 100%;
   padding: 5px;
-  padding-top: 2rem;
+  padding-top: 1rem;
   position: absolute;
   top: 0;
-  z-index: 9999;
+  z-index: 10;
 }
 .clicks-couner-card .user-click-counter {
   border: 1px solid #222f45;
@@ -123,6 +123,7 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
+  z-index: 11;
 }
 .main-content .leaderboard {
   width: 100%;
@@ -202,7 +203,7 @@ body {
   position: absolute;
   transform: scale(0);
   overflow-y: auto;
-  max-height: 400px;
+  max-height: 350px;
 }
 .main-content .leaderboard .the-list-of-cities.active {
   transform: scale(1);

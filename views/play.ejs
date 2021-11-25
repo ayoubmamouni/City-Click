@@ -21,23 +21,21 @@
         </div>
     </div>
 
-    <div class="main-image">
-
-    </div>
+    <div class="main-image"></div>
 
     <div class="main-content">
 
         <div class="leaderboard">
             <div class="leaderboard-header active">
                 <div class="first-city">
-                    <strong>#1 Casablanca</strong>
+                    <strong><span>#1</span> <span id="top-city"></span></strong>
                 </div>
 
                 <div class="usercity-total-clicks">
                     <div class="current-city-with-arrow">
                         <div class="image-city-with-name">
                             <img src="images/icons/userCity.svg" alt="The user svg icon">
-                            <strong>Arfoud</strong>
+                            <strong id="user-current-city"></strong>
                         </div>
                         <div class="arrow-icon">
                             <img src="images/icons/arrow.svg" alt="the arrow svg icon">
@@ -53,163 +51,20 @@
             </div>
 
             <div class="the-list-of-cities ">
-                <div class="city-item">
-                    <div class="user-city-name">
-                        <span class="rank">1</span>
-                        <strong>Khenifra</strong>
-                    </div>
-                    <div class="total-clicks">
-                        <code>121222</code>
-                        <img src="images/icons/click.svg" alt="the click svg icon">
-                    </div>
-                </div>
+
+                <% cities.forEach((city, index)=>{ %>
 
                 <div class="city-item">
                     <div class="user-city-name">
-                        <span class="rank">2</span>
-                        <strong>Mohamadia</strong>
+                        <span class="rank"><%= index+1 %> </span>
+                        <strong class="theCityName"><%= city.cityName%></strong>
                     </div>
                     <div class="total-clicks">
-                        <code>19222</code>
+                        <code><%= city.cityClicks%></code>
                         <img src="images/icons/click.svg" alt="the click svg icon">
                     </div>
                 </div>
-
-                <div class="city-item">
-                    <div class="user-city-name">
-                        <span class="rank">3</span>
-                        <strong>Adagir</strong>
-                    </div>
-                    <div class="total-clicks">
-                        <code>192922</code>
-                        <img src="images/icons/click.svg" alt="the click svg icon">
-                    </div>
-                </div>
-
-
-                <div class="city-item">
-                    <div class="user-city-name">
-                        <span class="rank">3</span>
-                        <strong>Adagir</strong>
-                    </div>
-                    <div class="total-clicks">
-                        <code>192922</code>
-                        <img src="images/icons/click.svg" alt="the click svg icon">
-                    </div>
-                </div>
-                <div class="city-item">
-                    <div class="user-city-name">
-                        <span class="rank">3</span>
-                        <strong>Adagir</strong>
-                    </div>
-                    <div class="total-clicks">
-                        <code>192922</code>
-                        <img src="images/icons/click.svg" alt="the click svg icon">
-                    </div>
-                </div>
-                <div class="city-item">
-                    <div class="user-city-name">
-                        <span class="rank">3</span>
-                        <strong>Adagir</strong>
-                    </div>
-                    <div class="total-clicks">
-                        <code>192922</code>
-                        <img src="images/icons/click.svg" alt="the click svg icon">
-                    </div>
-                </div>
-                <div class="city-item">
-                    <div class="user-city-name">
-                        <span class="rank">3</span>
-                        <strong>Adagir</strong>
-                    </div>
-                    <div class="total-clicks">
-                        <code>192922</code>
-                        <img src="images/icons/click.svg" alt="the click svg icon">
-                    </div>
-                </div>
-                <div class="city-item">
-                    <div class="user-city-name">
-                        <span class="rank">3</span>
-                        <strong>Adagir</strong>
-                    </div>
-                    <div class="total-clicks">
-                        <code>192922</code>
-                        <img src="images/icons/click.svg" alt="the click svg icon">
-                    </div>
-                </div>
-                <div class="city-item">
-                    <div class="user-city-name">
-                        <span class="rank">3</span>
-                        <strong>Adagir</strong>
-                    </div>
-                    <div class="total-clicks">
-                        <code>192922</code>
-                        <img src="images/icons/click.svg" alt="the click svg icon">
-                    </div>
-                </div>
-                <div class="city-item">
-                    <div class="user-city-name">
-                        <span class="rank">3</span>
-                        <strong>Adagir</strong>
-                    </div>
-                    <div class="total-clicks">
-                        <code>192922</code>
-                        <img src="images/icons/click.svg" alt="the click svg icon">
-                    </div>
-                </div>
-                <div class="city-item">
-                    <div class="user-city-name">
-                        <span class="rank">3</span>
-                        <strong>Adagir</strong>
-                    </div>
-                    <div class="total-clicks">
-                        <code>192922</code>
-                        <img src="images/icons/click.svg" alt="the click svg icon">
-                    </div>
-                </div>
-                <div class="city-item">
-                    <div class="user-city-name">
-                        <span class="rank">3</span>
-                        <strong>Adagir</strong>
-                    </div>
-                    <div class="total-clicks">
-                        <code>192922</code>
-                        <img src="images/icons/click.svg" alt="the click svg icon">
-                    </div>
-                </div>
-                <div class="city-item">
-                    <div class="user-city-name">
-                        <span class="rank">3</span>
-                        <strong>Adagir</strong>
-                    </div>
-                    <div class="total-clicks">
-                        <code>192922</code>
-                        <img src="images/icons/click.svg" alt="the click svg icon">
-                    </div>
-                </div>
-                <div class="city-item">
-                    <div class="user-city-name">
-                        <span class="rank">3</span>
-                        <strong>Adagir</strong>
-                    </div>
-                    <div class="total-clicks">
-                        <code>192922</code>
-                        <img src="images/icons/click.svg" alt="the click svg icon">
-                    </div>
-                </div>
-                <div class="city-item">
-                    <div class="user-city-name">
-                        <span class="rank">3</span>
-                        <strong>Adagir</strong>
-                    </div>
-                    <div class="total-clicks">
-                        <code>192922</code>
-                        <img src="images/icons/click.svg" alt="the click svg icon">
-                    </div>
-                </div>
-
-
-
+                <% }) %>
 
             </div>
         </div>
@@ -219,12 +74,21 @@
     <script>
         let data = JSON.parse(userCity)
         let city = document.querySelector('#city');
+        let userCityName = document.querySelector('#user-current-city');
         let userClicks = document.querySelector('#userClicks');
+        let mainImg = document.querySelector('.main-image');
         let countClicks = parseInt(data.userClicks)
-        city.innerText = data.userCity;
         userClicks.innerText = countClicks;
+        city.innerText = data.userCity;
 
-        document.addEventListener('click', () => {
+
+        let topCity = document.querySelector('#top-city');
+        let theCityName = document.querySelector('.theCityName');
+        userCityName.innerText = data.userCity
+        topCity.innerText = theCityName.innerText
+
+
+        mainImg.addEventListener('click', () => {
             let userDetails = {
                 userCity: data.userCity,
                 userClicks: countClicks,

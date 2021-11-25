@@ -36,8 +36,31 @@ router.post("/playTheGame", async (req, res) => {
   res.json({ msg: "got message", redirect: "/play" });
 });
 
-router.get("/play", (req, res) => {
-  res.render("play");
+router.get("/play", async (req, res) => {
+  try {
+    const citiesFunc = async () => {
+      const cities = await City.find().sort({ cityClicks: -1 });
+      if (!cities) {
+        res.render("errorPage", {
+          errorMessage: "There is no city in database",
+        });
+      }
+      res.render("play", { cities });
+    };
+    try {
+      const mycity = await City.findOne({ cityName: "Kenitra" });
+      if (mycity == null) return citiesFunc();
+      await mycity.cityClicks++;
+      await mycity.save();
+      citiesFunc();
+    } catch (err) {
+      res.render("errorPage", {
+        errorMessage: "Faild to update the city clicks",
+      });
+    }
+  } catch (err) {
+    res.render("errorPage", { errorMessage: "Failed to fetch the cities" });
+  }
 });
 
 module.exports = router;

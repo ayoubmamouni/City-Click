@@ -4,6 +4,7 @@ const cityClick = new mongoose.Schema(
     cityName: {
       type: String,
       required: true,
+      unique: true,
     },
     cityClicks: {
       type: Number,
