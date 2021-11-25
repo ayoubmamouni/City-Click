@@ -1,0 +1,43 @@
+%sharedProps {
+  display: flex;
+  align-items: center;
+}
+
+.main-content {
+  @extend %flexbox;
+  padding: 5px;
+  .leaderboard {
+    width: 100%;
+    max-width: 650px;
+    border-radius: 7px;
+    border: 1px solid $scrollBarColor;
+    color: $cardColor;
+    padding: 10px;
+    padding-top: 0;
+    background: $greyColor;
+    display: flex;
+    // align-items: center;
+    flex-direction: column;
+    img {
+      width: 20px;
+      object-fit: contain;
+    }
+    .leaderboard-header {
+      //   background: rgb(202, 60, 60);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid $scrollBarColor;
+      .first-city,
+      .usercity-total-clicks {
+        @extend %sharedProps;
+      }
+    }
+
+    .the-list-of-cities {
+      .city-item {
+      }
+    }
+  }
+}

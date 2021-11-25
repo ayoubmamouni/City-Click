@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-main {
+.main-content, main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,6 +63,39 @@ main .container .submit-btn {
 }
 main .container .submit-btn:hover {
   background-color: #0b4687;
+}
+
+.main-content .leaderboard .leaderboard-header .first-city,
+.main-content .leaderboard .leaderboard-header .usercity-total-clicks {
+  display: flex;
+  align-items: center;
+}
+
+.main-content {
+  padding: 5px;
+}
+.main-content .leaderboard {
+  width: 100%;
+  max-width: 650px;
+  border-radius: 7px;
+  border: 1px solid #222f45;
+  color: #222f45;
+  padding: 10px;
+  padding-top: 0;
+  background: #e8ecf0;
+  display: flex;
+  flex-direction: column;
+}
+.main-content .leaderboard img {
+  width: 20px;
+  object-fit: contain;
+}
+.main-content .leaderboard .leaderboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #222f45;
 }
 
 /*# sourceMappingURL=style.css.map */
