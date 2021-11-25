@@ -71,8 +71,16 @@ main .container .submit-btn:hover {
   align-items: center;
 }
 
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
 .main-content {
   padding: 5px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 .main-content .leaderboard {
   width: 100%;
@@ -98,6 +106,31 @@ main .container .submit-btn:hover {
   padding: 20px 0;
   margin-bottom: 10px;
 }
+.main-content .leaderboard .leaderboard-header .usercity-total-clicks {
+  display: flex;
+  flex-direction: column;
+}
+.main-content .leaderboard .leaderboard-header .usercity-total-clicks .current-city-with-arrow {
+  display: flex;
+}
+.main-content .leaderboard .leaderboard-header .usercity-total-clicks .current-city-with-arrow .image-city-with-name {
+  display: flex;
+  align-items: center;
+}
+.main-content .leaderboard .leaderboard-header .usercity-total-clicks .current-city-with-arrow .image-city-with-name img {
+  margin-right: 5px;
+}
+.main-content .leaderboard .leaderboard-header .usercity-total-clicks .current-city-with-arrow .image-city-with-name strong {
+  margin-right: 20px;
+}
+.main-content .leaderboard .leaderboard-header .usercity-total-clicks .current-city-counter {
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+}
+.main-content .leaderboard .leaderboard-header .usercity-total-clicks .current-city-counter code {
+  margin-right: 6px;
+}
 .main-content .leaderboard .the-list-of-cities .city-item {
   display: flex;
   justify-content: space-between;
@@ -112,6 +145,10 @@ main .container .submit-btn:hover {
 .main-content .leaderboard .the-list-of-cities .total-clicks {
   display: flex;
   align-items: center;
+}
+.main-content .leaderboard .the-list-of-cities .user-city-name span,
+.main-content .leaderboard .the-list-of-cities .total-clicks span {
+  margin-right: 5px;
 }
 .main-content .leaderboard .the-list-of-cities .user-city-name img,
 .main-content .leaderboard .the-list-of-cities .total-clicks img {
