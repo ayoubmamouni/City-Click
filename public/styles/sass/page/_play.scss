@@ -63,13 +63,29 @@ body {
               margin-right: 20px;
             }
           }
+          .arrow-icon {
+            transition: 700ms;
+            &.active {
+              transform: rotate(180deg);
+            }
+          }
         }
         .current-city-counter {
           display: flex;
           align-items: center;
           align-self: flex-end;
+          margin-right: 20px;
+          background-color: $primaryColor;
+          border-radius: 2px;
+          padding: 2px;
+          color: $cardBorderColor;
+          border: 1px solid $cardBorderColor;
           code {
-            margin-right: 6px;
+            margin-right: 3px;
+          }
+          img {
+            filter: brightness(70%);
+            width: 15px;
           }
         }
       }
@@ -80,6 +96,8 @@ body {
       transform-origin: bottom;
       position: absolute;
       transform: scale(0);
+      overflow-y: auto;
+      max-height: 400px;
       &.active {
         transform: scale(1);
         position: relative;

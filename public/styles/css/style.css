@@ -14,7 +14,7 @@
 }
 
 *::-webkit-scrollbar {
-  width: 13px;
+  width: 8px;
   background: #e8ecf0;
 }
 
@@ -131,19 +131,37 @@ body {
 .main-content .leaderboard .leaderboard-header .usercity-total-clicks .current-city-with-arrow .image-city-with-name strong {
   margin-right: 20px;
 }
+.main-content .leaderboard .leaderboard-header .usercity-total-clicks .current-city-with-arrow .arrow-icon {
+  transition: 700ms;
+}
+.main-content .leaderboard .leaderboard-header .usercity-total-clicks .current-city-with-arrow .arrow-icon.active {
+  transform: rotate(180deg);
+}
 .main-content .leaderboard .leaderboard-header .usercity-total-clicks .current-city-counter {
   display: flex;
   align-items: center;
   align-self: flex-end;
+  margin-right: 20px;
+  background-color: #f4f4f4;
+  border-radius: 2px;
+  padding: 2px;
+  color: #091830;
+  border: 1px solid #091830;
 }
 .main-content .leaderboard .leaderboard-header .usercity-total-clicks .current-city-counter code {
-  margin-right: 6px;
+  margin-right: 3px;
+}
+.main-content .leaderboard .leaderboard-header .usercity-total-clicks .current-city-counter img {
+  filter: brightness(70%);
+  width: 15px;
 }
 .main-content .leaderboard .the-list-of-cities {
   transition: 300ms;
   transform-origin: bottom;
   position: absolute;
   transform: scale(0);
+  overflow-y: auto;
+  max-height: 400px;
 }
 .main-content .leaderboard .the-list-of-cities.active {
   transform: scale(1);
