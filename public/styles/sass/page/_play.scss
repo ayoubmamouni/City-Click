@@ -5,6 +5,7 @@
 body {
   position: relative;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .main-content {
@@ -36,6 +37,13 @@ body {
       align-items: center;
       padding: 20px 0;
       margin-bottom: 10px;
+      cursor: pointer;
+      &.active {
+        box-shadow: none;
+        padding: 10px 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
       .first-city,
       .usercity-total-clicks {
         @extend %sharedProps;
@@ -68,6 +76,14 @@ body {
     }
 
     .the-list-of-cities {
+      transition: 300ms;
+      transform-origin: bottom;
+      position: absolute;
+      transform: scale(0);
+      &.active {
+        transform: scale(1);
+        position: relative;
+      }
       .city-item {
         display: flex;
         justify-content: space-between;

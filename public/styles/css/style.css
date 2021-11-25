@@ -74,6 +74,7 @@ main .container .submit-btn:hover {
 body {
   position: relative;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .main-content {
@@ -105,6 +106,13 @@ body {
   align-items: center;
   padding: 20px 0;
   margin-bottom: 10px;
+  cursor: pointer;
+}
+.main-content .leaderboard .leaderboard-header.active {
+  box-shadow: none;
+  padding: 10px 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 .main-content .leaderboard .leaderboard-header .usercity-total-clicks {
   display: flex;
@@ -130,6 +138,16 @@ body {
 }
 .main-content .leaderboard .leaderboard-header .usercity-total-clicks .current-city-counter code {
   margin-right: 6px;
+}
+.main-content .leaderboard .the-list-of-cities {
+  transition: 300ms;
+  transform-origin: bottom;
+  position: absolute;
+  transform: scale(0);
+}
+.main-content .leaderboard .the-list-of-cities.active {
+  transform: scale(1);
+  position: relative;
 }
 .main-content .leaderboard .the-list-of-cities .city-item {
   display: flex;

@@ -26,7 +26,7 @@
     <div class="main-content">
 
         <div class="leaderboard">
-            <div class="leaderboard-header">
+            <div class="leaderboard-header active">
                 <div class="first-city">
                     <strong>#1 Casablanca</strong>
                 </div>
@@ -50,9 +50,7 @@
 
             </div>
 
-            <div class="the-list-of-cities">
-
-
+            <div class="the-list-of-cities ">
                 <div class="city-item">
                     <div class="user-city-name">
                         <span class="rank">1</span>
@@ -107,6 +105,13 @@
             countClicks++
             localStorage.setItem('userCity', JSON.stringify(userDetails))
             userClicks.innerText = countClicks - 1;
+        })
+
+        let leadHeader = document.querySelector('.leaderboard-header');
+        let cityList = document.querySelector('.the-list-of-cities');
+        leadHeader.addEventListener('click', e => {
+            e.target.classList.toggle('active')
+            cityList.classList.toggle('active')
         })
     </script>
 </body>
