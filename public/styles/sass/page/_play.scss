@@ -6,6 +6,49 @@ body {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
+  user-select: none;
+}
+
+.clicks-couner-card {
+  @extend %flexbox;
+  width: 100%;
+  padding: 5px;
+  padding-top: 2rem;
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+  .user-click-counter {
+    border: 1px solid $scrollBarColor;
+    background: $citiesCardBorder;
+    padding: 1rem;
+    border-radius: 5px;
+    color: $greyColor;
+    width: 100%;
+    max-width: 500px;
+    #city {
+      font-size: 40px;
+      margin-bottom: 1rem;
+      color: $cityNameColor;
+      text-shadow: 2px 2px 2px $greyColor;
+    }
+    #userClicks {
+      // padding: 2px 5px;
+      border-radius: 3px;
+      border: 1px solid $cardBorderColor;
+      color: $cardColor;
+      text-align: center;
+      background: $primaryColor;
+    }
+  }
+}
+
+.main-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../../images/site-pics/img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .main-content {

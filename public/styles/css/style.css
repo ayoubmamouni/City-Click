@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-.main-content, main {
+.main-content, .clicks-couner-card, main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,6 +75,47 @@ body {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
+  user-select: none;
+}
+
+.clicks-couner-card {
+  width: 100%;
+  padding: 5px;
+  padding-top: 2rem;
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+}
+.clicks-couner-card .user-click-counter {
+  border: 1px solid #222f45;
+  background: #1277e6;
+  padding: 1rem;
+  border-radius: 5px;
+  color: #e8ecf0;
+  width: 100%;
+  max-width: 500px;
+}
+.clicks-couner-card .user-click-counter #city {
+  font-size: 40px;
+  margin-bottom: 1rem;
+  color: #ec2a58;
+  text-shadow: 2px 2px 2px #e8ecf0;
+}
+.clicks-couner-card .user-click-counter #userClicks {
+  border-radius: 3px;
+  border: 1px solid #091830;
+  color: #222f45;
+  text-align: center;
+  background: #f4f4f4;
+}
+
+.main-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../../images/site-pics/img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .main-content {
