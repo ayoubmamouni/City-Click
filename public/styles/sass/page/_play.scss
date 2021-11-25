@@ -23,12 +23,12 @@
       object-fit: contain;
     }
     .leaderboard-header {
-      //   background: rgb(202, 60, 60);
+      box-shadow: 0px 5px 0px 0px rgba(131, 154, 174, 0.648);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid $scrollBarColor;
+      padding: 20px 0;
+      margin-bottom: 10px;
       .first-city,
       .usercity-total-clicks {
         @extend %sharedProps;
@@ -37,6 +37,22 @@
 
     .the-list-of-cities {
       .city-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 7px 3px;
+        border-bottom: 1px solid $citiesCardBorder;
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+      .user-city-name,
+      .total-clicks {
+        display: flex;
+        align-items: center;
+        img {
+          margin-left: 5px;
+        }
       }
     }
   }
