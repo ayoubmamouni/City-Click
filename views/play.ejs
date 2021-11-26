@@ -86,6 +86,7 @@
 
 
     <script>
+        const audio = new Audio("sound/click.wav");
         let data = JSON.parse(userCity)
         let city = document.querySelector('#city');
         let userCityName = document.querySelector('#user-current-city');
@@ -120,7 +121,6 @@
                 })
             })
             const response = await res.json()
-            console.log(response)
         }
 
 
@@ -132,6 +132,7 @@
             countClicks++
             localStorage.setItem('userCity', JSON.stringify(userDetails))
             userClicks.innerText = countClicks - 1;
+            audio.play()
             newClick()
         })
 
@@ -144,6 +145,26 @@
             cityList.classList.toggle('active')
             arrow.classList.toggle('active')
         })
+        // cityList.innerHTML = `
+        //             <div class="city-item">
+        //                 <div class="user-city-name">
+        //                     <span class="rank">${data.clicks[i]}</span>
+        //                     <strong class="theCityName">${data.clicks.cityName}</strong>
+        //                 </div>
+        //                 <div class="total-clicks">
+        //                     <code>${data.clicks.cityClicks}</code>
+        //                     <img src="images/icons/click.svg" alt="the click svg icon">
+        //                 </div>
+        //             </div>
+        //         `
+
+        // get new click from server
+        // const getCurrentClicks = async () => {
+        //     const res = await fetch('/clicks')
+        //     const data = await res.json()
+        //     // console.log('fetched')
+        // }
+        // setTimeout(getCurrentClicks, 500);
     </script>
 </body>
 

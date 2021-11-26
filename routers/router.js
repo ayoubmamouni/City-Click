@@ -51,7 +51,6 @@ router.get("/play", async (req, res) => {
 });
 
 router.post("/newClick", async (req, res) => {
-  // console.log('new click')
   const userCityName = await req.body.theUserCity;
   const userCity = await City.findOne({ cityName: userCityName });
   if (userCity == null) {
@@ -60,6 +59,15 @@ router.post("/newClick", async (req, res) => {
   await userCity.cityClicks++;
   await userCity.save();
   res.json({ msg: "city clicks updated" });
+});
+
+router.get("/clicks", async (req, res) => {
+  try {
+    const cityClicks = await City.find();
+    res.json({ clicks: cityClicks });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 module.exports = router;
