@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="player3">
+<html lang="en">
 
 <head>
     <%- include('./partials/__head.ejs') %>
@@ -12,7 +12,7 @@
     </script>
 </head>
 
-<body onload="goFullscreen('player');">
+<body>
 
     <div class="clicks-couner-card">
         <div class="user-click-counter">
@@ -108,6 +108,21 @@
         userCityName.innerText = data.userCity
         topCity.innerText = theCityName.innerText
 
+        // send new click to the server
+        const newClick = async () => {
+            const res = await fetch('/newClick', {
+                method: 'POST',
+                headers: {
+                    "Content-type": "application/json;charset=UTF-8"
+                },
+                body: JSON.stringify({
+                    theUserCity: data.userCity
+                })
+            })
+            const response = await res.json()
+            console.log(response)
+        }
+
 
         mainImg.addEventListener('click', () => {
             let userDetails = {
@@ -117,6 +132,7 @@
             countClicks++
             localStorage.setItem('userCity', JSON.stringify(userDetails))
             userClicks.innerText = countClicks - 1;
+            newClick()
         })
 
         let leadHeader = document.querySelector('.leaderboard-header');
@@ -128,16 +144,6 @@
             cityList.classList.toggle('active')
             arrow.classList.toggle('active')
         })
-
-
-        function goFullscreen() {
-            var element = document.getElementById("player3");
-            if (element.mozRequestFullScreen) {
-                element.mozRequestFullScreen();
-            } else if (element.webkitRequestFullScreen) {
-                element.webkitRequestFullScreen();
-            }
-        }
     </script>
 </body>
 
