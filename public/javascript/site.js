@@ -1,5 +1,6 @@
 const selectCity = document.querySelector("#city");
 const submitBtn = document.querySelector(".submit-btn");
+const container = document.querySelector(".container");
 
 const sendCityToTheServer = async (theCity) => {
   const res = await fetch("/city", {
@@ -17,12 +18,16 @@ const sendCityToTheServer = async (theCity) => {
   document.location.href = "/";
 };
 
-submitBtn.addEventListener("click", () => {
+submitBtn.addEventListener("click", (e) => {
   sendCityToTheServer(selectCity.value);
+  container.style.display = "none";
 });
 
 //check if user is already chosen his city
 const getUserCity = localStorage.getItem("userCity");
+if (!getUserCity) {
+  container.style.display = "block";
+}
 
 async function userHasCity(theUserCity) {
   const play = await fetch("/playTheGame", {
