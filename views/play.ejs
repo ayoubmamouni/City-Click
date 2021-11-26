@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="player3">
 
 <head>
     <%- include('./partials/__head.ejs') %>
@@ -12,7 +12,7 @@
     </script>
 </head>
 
-<body>
+<body onload="goFullscreen('player');">
 
     <div class="clicks-couner-card">
         <div class="user-click-counter">
@@ -130,7 +130,14 @@
         })
 
 
-        document.documentElement.requestFullscreen()
+        function goFullscreen() {
+            var element = document.getElementById("player3");
+            if (element.mozRequestFullScreen) {
+                element.mozRequestFullScreen();
+            } else if (element.webkitRequestFullScreen) {
+                element.webkitRequestFullScreen();
+            }
+        }
     </script>
 </body>
 
