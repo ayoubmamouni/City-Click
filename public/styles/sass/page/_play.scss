@@ -13,7 +13,7 @@ body {
   @extend %flexbox;
   width: 100%;
   padding: 5px;
-  padding-top: 1rem;
+  padding-top: 0.3rem;
   position: absolute;
   top: 0;
   z-index: 10;
@@ -21,6 +21,7 @@ body {
     border: 1px solid $scrollBarColor;
     background: $citiesCardBorder;
     padding: 1rem;
+    padding-bottom: 0;
     border-radius: 5px;
     color: $greyColor;
     width: 100%;
@@ -38,6 +39,38 @@ body {
       color: $cardColor;
       text-align: center;
       background: $primaryColor;
+    }
+
+    .info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+      @media screen and (max-width: 400px) {
+        // display: block;
+        flex-direction: column;
+      }
+      img {
+        width: 20px;
+        object-fit: contain;
+        margin-left: 10px;
+      }
+      .item {
+        cursor: pointer;
+        margin: 2px;
+        background: $greyColor;
+        border: 1px solid $scrollBarColor;
+        color: $cardColor;
+        padding: 2px;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        transition: 200ms;
+        &:hover {
+          background: darken($greyColor, 10%);
+          transform: scale(1.03);
+        }
+      }
     }
   }
 }

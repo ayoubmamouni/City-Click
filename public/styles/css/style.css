@@ -31,6 +31,10 @@ body {
   background: #f4f4f4;
 }
 
+a {
+  text-decoration: none;
+}
+
 main {
   min-height: 100vh;
 }
@@ -81,7 +85,7 @@ body {
 .clicks-couner-card {
   width: 100%;
   padding: 5px;
-  padding-top: 1rem;
+  padding-top: 0.3rem;
   position: absolute;
   top: 0;
   z-index: 10;
@@ -90,6 +94,7 @@ body {
   border: 1px solid #222f45;
   background: #1277e6;
   padding: 1rem;
+  padding-bottom: 0;
   border-radius: 5px;
   color: #e8ecf0;
   width: 100%;
@@ -107,6 +112,38 @@ body {
   color: #222f45;
   text-align: center;
   background: #f4f4f4;
+}
+.clicks-couner-card .user-click-counter .info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+@media screen and (max-width: 400px) {
+  .clicks-couner-card .user-click-counter .info {
+    flex-direction: column;
+  }
+}
+.clicks-couner-card .user-click-counter .info img {
+  width: 20px;
+  object-fit: contain;
+  margin-left: 10px;
+}
+.clicks-couner-card .user-click-counter .info .item {
+  cursor: pointer;
+  margin: 2px;
+  background: #e8ecf0;
+  border: 1px solid #222f45;
+  color: #222f45;
+  padding: 2px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  transition: 200ms;
+}
+.clicks-couner-card .user-click-counter .info .item:hover {
+  background: #c9d3dc;
+  transform: scale(1.03);
 }
 
 .main-image {

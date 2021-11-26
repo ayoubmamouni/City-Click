@@ -18,7 +18,21 @@
         <div class="user-click-counter">
             <h1 id="city"></h1>
             <h1 id="userClicks">0</h1>
+
+            <div class="info">
+                <div class="item change-my-city">
+                    <small>Change your city</small>
+                    <img src="images/icons/change.svg" alt="change icon svg">
+                </div>
+                <a href="#">
+                    <div class="item view-on-github">
+                        <small>View on github</small>
+                        <img src="images/icons/github.svg" alt="github svg icon">
+                    </div>
+                </a>
+            </div>
         </div>
+
     </div>
 
     <div class="main-image"></div>
@@ -84,6 +98,13 @@
 
         let topCity = document.querySelector('#top-city');
         let theCityName = document.querySelector('.theCityName');
+
+        let changeTheCity = document.querySelector('.change-my-city');
+        changeTheCity.addEventListener('click', () => {
+            localStorage.clear()
+            document.location.reload()
+        })
+
         userCityName.innerText = data.userCity
         topCity.innerText = theCityName.innerText
 
