@@ -55,8 +55,6 @@ const cities = [
   "Ouarzazat",
   "Ouezzane",
   "Oujda-Angad",
-  "Oukaïmedene",
-  "Oulad Tayeb",
   "Oulad Teïma",
   "Ouled Khlifa",
   "Oulmes",
