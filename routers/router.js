@@ -51,20 +51,35 @@ router.get("/play", async (req, res) => {
 });
 
 router.post("/newClick", async (req, res) => {
-  const userCityName = await req.body.theUserCity;
-  const userCity = await City.findOne({ cityName: userCityName });
-  if (userCity == null) {
-    res.json({ msg: "no city to update" });
+  try {
+    const userCityName = await req.body.theUserCity;
+    const userCity = await City.findOne({ cityName: userCityName });
+    if (userCity == null) {
+      res.json({ msg: "no city to update" });
+    }
+    await userCity.cityClicks++;
+    await userCity.save();
+    res.json({ msg: "city clicks updated" });
+  } catch (error) {
+    res.json({ msg: error.message });
   }
-  await userCity.cityClicks++;
-  await userCity.save();
-  res.json({ msg: "city clicks updated" });
 });
 
 router.get("/clicks", async (req, res) => {
   try {
     const cityClicks = await City.find();
     res.json({ clicks: cityClicks });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+router.post("/currentCity", async (req, res) => {
+  let userCity = req.body.userCity;
+  try {
+    const cityClicks = await City.findOne({ cityName: userCity });
+    console.log(cityClicks);
+    res.json({ currentUserClicks: cityClicks });
   } catch (err) {
     console.log(err);
   }

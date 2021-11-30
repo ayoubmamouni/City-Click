@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="current-city-counter">
-                        <code>3343</code>
+                        <code id="currentCityClicks">0</code>
                         <img src="images/icons/click.svg" alt="the click svg icon">
                     </div>
                 </div>
@@ -65,9 +65,7 @@
             </div>
 
             <div class="the-list-of-cities ">
-
                 <% cities.forEach((city, index)=>{ %>
-
                 <div class="city-item">
                     <div class="user-city-name">
                         <span class="rank"><%= index+1 %> </span>
@@ -79,7 +77,6 @@
                     </div>
                 </div>
                 <% }) %>
-
             </div>
         </div>
     </div>
@@ -97,6 +94,22 @@
         city.innerText = data.userCity;
 
 
+        //get current click to currentcity
+        const getCurrentCity = async (city) => {
+            const currentCity = await fetch('/currentCity', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    userCity: city
+                })
+            })
+            const data = await currentCity.json()
+            document.querySelector('#currentCityClicks').innerText = data.currentUserClicks.cityClicks
+        }
+        getCurrentCity(data.userCity)
+
         let topCity = document.querySelector('#top-city');
         let theCityName = document.querySelector('.theCityName');
 
@@ -110,7 +123,7 @@
         topCity.innerText = theCityName.innerText
 
         // send new click to the server
-        const newClick = async () => {
+        mainImg.addEventListener('click', async () => {
             const res = await fetch('/newClick', {
                 method: 'POST',
                 headers: {
@@ -121,19 +134,15 @@
                 })
             })
             const response = await res.json()
-        }
 
-
-        mainImg.addEventListener('click', () => {
             let userDetails = {
                 userCity: data.userCity,
-                userClicks: countClicks,
+                userClicks: countClicks++,
             }
-            countClicks++
-            localStorage.setItem('userCity', JSON.stringify(userDetails))
+            // await countClicks++
+            await localStorage.setItem('userCity', JSON.stringify(userDetails))
             userClicks.innerText = countClicks - 1;
             audio.play()
-            newClick()
         })
 
         let leadHeader = document.querySelector('.leaderboard-header');
@@ -145,26 +154,6 @@
             cityList.classList.toggle('active')
             arrow.classList.toggle('active')
         })
-        // cityList.innerHTML = `
-        //             <div class="city-item">
-        //                 <div class="user-city-name">
-        //                     <span class="rank">${data.clicks[i]}</span>
-        //                     <strong class="theCityName">${data.clicks.cityName}</strong>
-        //                 </div>
-        //                 <div class="total-clicks">
-        //                     <code>${data.clicks.cityClicks}</code>
-        //                     <img src="images/icons/click.svg" alt="the click svg icon">
-        //                 </div>
-        //             </div>
-        //         `
-
-        // get new click from server
-        // const getCurrentClicks = async () => {
-        //     const res = await fetch('/clicks')
-        //     const data = await res.json()
-        //     // console.log('fetched')
-        // }
-        // setTimeout(getCurrentClicks, 500);
     </script>
 </body>
 
